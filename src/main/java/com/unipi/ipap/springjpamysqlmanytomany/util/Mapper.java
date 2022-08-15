@@ -5,7 +5,9 @@ import com.unipi.ipap.springjpamysqlmanytomany.dto.StudentDto;
 import com.unipi.ipap.springjpamysqlmanytomany.entity.Course;
 import com.unipi.ipap.springjpamysqlmanytomany.entity.Student;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Mapper {
 
     private static final ModelMapper modelMapper = new ModelMapper();

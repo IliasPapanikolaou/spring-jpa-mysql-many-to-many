@@ -1,6 +1,6 @@
 package com.unipi.ipap.springjpamysqlmanytomany.dto;
 
-import com.unipi.ipap.springjpamysqlmanytomany.entity.Student;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +19,10 @@ public class CourseDto {
     private String abbreviation;
     private Integer modules;
     private Double fee;
-    private Set<Student> students;
+    @JsonBackReference // Unless it does stackoverflow Students -> Courses -> Students -> Courses...
+//    @JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
+    private Set<StudentDto> students;
 
 }
