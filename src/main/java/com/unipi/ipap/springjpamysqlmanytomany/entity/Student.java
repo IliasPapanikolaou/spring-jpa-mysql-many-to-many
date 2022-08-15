@@ -1,6 +1,7 @@
 package com.unipi.ipap.springjpamysqlmanytomany.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,10 @@ public class Student {
     inverseJoinColumns = {
             @JoinColumn(name = "course_id", referencedColumnName = "id")
     })
-    @JsonManagedReference // Unless it does stackoverflow Students -> Courses -> Students -> Courses...
+    // @JsonManagedReference // Unless it does stackoverflow Students -> Courses -> Students -> Courses...
+    // or use @JsonIdentityInfo
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
     private Set<Course> courses;
 }

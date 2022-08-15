@@ -1,6 +1,7 @@
 # Spring JPA Many-to-Many Example
 
-JPA Entity setup and use of @JsonBackReference and @JsonManagedReference to prevent stackoverflow
+JPA Entity setup and use of *@JsonBackReference* and *@JsonManagedReference* or *@JsonIdentityInfo*
+to prevent stackoverflow
 
 Add Student request endpoint: 
 > POST: http://localhost:8080/api/student
