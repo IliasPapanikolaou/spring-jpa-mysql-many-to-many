@@ -5,6 +5,18 @@ JPA Entity setup and use of @JsonBackReference and @JsonManagedReference to prev
 Add Student request endpoint: 
 > POST: http://localhost:8080/api/student
 
+Get all students
+> GET: http://localhost:8080/api/student/
+
+Get student by id
+> GET: http://localhost:8080/api/student/1
+
+Get student whose name starts with jo
+> GET: http://localhost:8080/api/student/name/jo
+
+Get course by price less than $75
+> GET: http://localhost:8080/api/course/75
+
 Request:
 
 ```json
